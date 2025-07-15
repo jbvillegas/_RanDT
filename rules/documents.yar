@@ -196,7 +196,7 @@ rule suspicious_zip_archive {
         
     condition:
         $zip_header at 0 and 
-        (any of ($*_in_zip) or any of ($double_ext*)) and
+        (any of ($*in_zip) or any of ($double_ext*)) and
         (any of ($password*) or any of ($suspicious_name*))
 }
 
@@ -370,7 +370,7 @@ rule document_with_embedded_executable {
         $stream3 = "/Type/EmbeddedFile" nocase
         
     condition:
-        (any of ($*_header) at 0) and 
+        (any of ($*header) at 0) and 
         (any of ($pe_header, $elf_header, $macho_header)) and
         (any of ($embed*) or any of ($stream*))
 }

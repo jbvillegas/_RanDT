@@ -435,7 +435,7 @@ rule comprehensive_threat_assessment {
             (suspicious_executable or ransomware_indicators or trojan_behavior) or
             
             // Privacy violations
-            (credential_harvesting or browser_data_theft or cryptocurrency_wallet_theft) or
+            (credential_harvesting or browser_data_theft or crypto_wallet_theft) or
             
             // Network threats
             (command_and_control_communication or dns_tunneling_detection or suspicious_network_traffic) or

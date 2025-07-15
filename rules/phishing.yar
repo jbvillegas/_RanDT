@@ -23,7 +23,7 @@ rule phising {
         $clck2 = "verify" nocase
         $clck3 = "here" nocase
         $clck4 = "now" nocase
-        $clck = "change password" nocase
+        $clck5 = "change password" nocase
 
         $pmtp = "unautorhized" nocase
         $pmtp1 = "expired" nocase

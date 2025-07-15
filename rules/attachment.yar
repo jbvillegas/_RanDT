@@ -62,7 +62,9 @@ rule without_attachment: mail {
 rule attachment_size: mail {
     meta:
         author = "Joaquin Villegas"
-        description = "Detects emails with attachments larger/smaller than 1MB"
+    strings:
+        $attachment = "Content-Disposition: attachment" nocase
+        $filename = "filename=" nocase
 
     condition:
         $attachment and
