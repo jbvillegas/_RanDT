@@ -1,3 +1,4 @@
+## Ransomware Detection Tool (RanDT)
 Lightweight Ransomware Detection Tool (RanDT) creating utilizing YARA and JS. Works in real time and it is perfect for malware analysis, threat hunting and research.
 
 ## Features
