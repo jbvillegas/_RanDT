@@ -27,7 +27,7 @@ We encourage responsible disclosure of security vulnerabilities. Please follow t
 #### **How to Report**
 
 **Primary Contact:**
-- **Email:** [security@randt.project](https://github.com/jbvillegas)
+- **Email:** [jbvillegas@\[github\].com](https://github.com/jbvillegas)
 - **PGP Key:** [Available on request]
 - **Response Time:** Within 24 hours
 
@@ -324,4 +324,4 @@ This security policy is part of the RanDT project and is subject to the same Ran
 
 ---
 
-*Thank you for helping keep RanDT and its users secure! 🛡️*
+*Thank you for helping keep RanDT and its users secure! *
