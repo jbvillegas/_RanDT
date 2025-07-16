@@ -1,0 +1,56 @@
+{
+  "detector": {
+    "maxFileSize": 104857600,
+    "scanTimeout": 30000,
+    "enableQuarantine": false,
+    "enableNotifications": true,
+    "logLevel": "info",
+    "statsInterval": 600000,
+    "watchDepth": 3
+  },
+  "paths": {
+    "watchPaths": [
+      "~/Documents",
+      "~/Desktop", 
+      "~/Downloads"
+    ],
+    "excludePaths": [
+      "node_modules",
+      ".git",
+      ".DS_Store",
+      "Thumbs.db"
+    ],
+    "quarantineDir": "./quarantine",
+    "logFile": "./detection.log",
+    "rulesDir": "./rules"
+  },
+  "extensions": {
+    "scan": [
+      ".exe", ".dll", ".bat", ".cmd", ".scr", ".com", ".pif",
+      ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx",
+      ".rtf", ".zip", ".rar", ".7z", ".tar", ".gz",
+      ".js", ".vbs", ".ps1", ".jar", ".app", ".dmg",
+      ".eml", ".msg", ".txt", ".html", ".htm", ".py", ".sh"
+    ],
+    "skip": [
+      ".tmp", ".temp", ".log", ".cache"
+    ]
+  },
+  "notifications": {
+    "desktop": true,
+    "email": false,
+    "webhook": false,
+    "sound": true
+  },
+  "rules": {
+    "master": "master.yar",
+    "categories": [
+      "attachment.yar",
+      "phishing.yar", 
+      "malware.yar",
+      "documents.yar",
+      "privacy.yar",
+      "network.yar"
+    ]
+  }
+}
