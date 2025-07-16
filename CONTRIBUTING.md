@@ -6,13 +6,13 @@
 **Sensitive Data Handling** - Privacy protection and data sanitization
 **Security Testing Requirements** - Comprehensive security validation
 
-##Project-Specific Guidelines:
+## Project-Specific Guidelines:
 **Threat Detection Focus** - Standards for detection rules and false positive prevention
 **Performance Considerations** - Memory and CPU usage guidelines for monitoring tools
 **Cross-Platform Support** - macOS primary with Linux/Windows considerations
 **Real-time Monitoring** - Guidelines for file system monitoring contributions
 
-##Professional Standards:
+## Professional Standards:
 **Clear Development Setup** - Step-by-step environment configuration
 **Comprehensive Testing** - Multiple test categories including security tests
 **Code Quality Standards** - JavaScript best practices with security focus
