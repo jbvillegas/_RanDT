@@ -48,7 +48,7 @@ Examples of unacceptable behavior include:
 
 RanDT is a security tool, and we welcome responsible security research. However:
 
-* **Responsible Disclosure**: Security vulnerabilities should be reported privately to [security@randt.project] before public disclosure
+* **Responsible Disclosure**: Security vulnerabilities should be reported privately to [github.com/jbvillegas] before public disclosure
 * **No Malicious Testing**: Do not test RanDT with live malware or on systems you don't own
 * **Educational Purpose**: Share knowledge for defensive purposes only
 * **Legal Compliance**: Ensure all contributions comply with local cybersecurity laws
