@@ -112,8 +112,9 @@ cmd_package() {
     
     ## COPY FILES
     cp -r rules dist/RanDT/
-    cp detector.js cli.js config.json package.json dist/RanDT/
-    cp README.md LICENSE install.sh test-rules.sh dist/RanDT/
+    cp -r src dist/RanDT/
+    cp config.json package.json dist/RanDT/
+    cp README.md LICENSE scripts/install.sh scripts/test-rules.sh dist/RanDT/
     
     ## CREATE TARBALL 
     cd dist

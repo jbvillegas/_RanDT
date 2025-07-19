@@ -130,7 +130,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     <key>ProgramArguments</key>
     <array>
         <string>/usr/local/bin/node</string>
-        <string>$CURRENT_DIR/detector.js</string>
+        <string>$CURRENT_DIR/src/detector.js</string>
     </array>
     <key>WorkingDirectory</key>
     <string>$CURRENT_DIR</string>
