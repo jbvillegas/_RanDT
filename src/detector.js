@@ -7,10 +7,10 @@ const os = require('os');
 // Configuration
 const CONFIG = {
     RULES_DIR: path.join(__dirname, 'rules'),
-    MASTER_RULES: path.join(__dirname, 'rules', 'master.yar'),
+    MASTER_RULES: path.join(__dirname, '..', 'rules', 'master.yar'),
     MAX_FILE_SIZE: 100 * 1024 * 1024, // 100MB
-    QUARANTINE_DIR: path.join(__dirname, 'quarantine'),
-    LOG_FILE: path.join(__dirname, 'detection.log'),
+    QUARANTINE_DIR: path.join(__dirname, '..', 'quarantine'),
+    LOG_FILE: path.join(__dirname, '..', 'logs', 'detection.log'),
     SCAN_TIMEOUT: 30000, // 30 seconds
 };
 
@@ -49,6 +49,12 @@ function log(level, message, data = null) {
     
     // Also log to file
     try {
+        // Create logs directory if it doesn't exist
+        const logDir = path.dirname(CONFIG.LOG_FILE);
+        if (!fs.existsSync(logDir)) {
+            fs.mkdirSync(logDir, { recursive: true });
+        }
+        
         const fullLogEntry = data ? 
             `${logEntry}\nData: ${JSON.stringify(data, null, 2)}\n` : 
             `${logEntry}\n`;
@@ -267,7 +273,10 @@ function initializeWatcher() {
             /(^|[\/\\])\../, // ignore dotfiles
             /node_modules/,   // ignore node_modules
             /\.git/,         // ignore git files
-            CONFIG.QUARANTINE_DIR // ignore quarantine directory
+            /_RanDT/,        // ignore project directory
+            /\.log$/,        // ignore log files
+            CONFIG.QUARANTINE_DIR, // ignore quarantine directory
+            path.dirname(CONFIG.LOG_FILE) // ignore logs directory
         ],
         persistent: true,
         ignoreInitial: false, // Scan existing files on startup

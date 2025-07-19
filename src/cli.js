@@ -44,7 +44,7 @@ async function startDetector(options) {
         if (options.daemon) args.push('--daemon');
         if (options.verbose) args.push('--verbose');
         
-        const detector = spawn('node', ['detector.js', ...args], {
+        const detector = spawn('node', ['src/detector.js', ...args], {
             stdio: options.daemon ? 'ignore' : 'inherit',
             detached: options.daemon
         });
@@ -62,7 +62,7 @@ async function startDetector(options) {
 
 // Stop detector
 function stopDetector() {
-    exec('pkill -f "node detector.js"', (error, stdout, stderr) => {
+    exec('pkill -f "node src/detector.js"', (error, stdout, stderr) => {
         if (error) {
             console.log(chalk.yellow('RanDT is not running or could not be stopped'));
         } else {
@@ -73,7 +73,7 @@ function stopDetector() {
 
 // Check status
 function checkStatus() {
-    exec('pgrep -f "node detector.js"', (error, stdout) => {
+    exec('pgrep -f "node src/detector.js"', (error, stdout) => {
         if (error) {
             console.log(chalk.yellow('RanDT is not running'));
         } else {
