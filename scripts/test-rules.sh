@@ -165,7 +165,7 @@ encoded_data: aGVsbG8gd29ybGQgdGhpcyBpcyBhIHRlc3Q=
 EOF
 }
 
-# Test 7: Cryptocurrency wallet test
+# Test 7: Cryptocurrency wallet test / FAKE SCENARIO
 create_crypto_test() {
     log_info "Creating cryptocurrency test..."
     cat > "$TEST_DIR/wallet_data.txt" << 'EOF'
@@ -181,7 +181,7 @@ metamask_vault: {"data":"encrypted_vault_data","iv":"initialization_vector","sal
 EOF
 }
 
-# Test 8: SSH key extraction test
+# Test 8: SSH key extraction test /FAKE SCENARIO
 create_ssh_test() {
     log_info "Creating SSH key test..."
     cat > "$TEST_DIR/ssh_keys.txt" << 'EOF'
