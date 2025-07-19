@@ -18,10 +18,13 @@
       "node_modules",
       ".git",
       ".DS_Store",
-      "Thumbs.db"
+      "Thumbs.db",
+      "_RanDT",
+      "*/detection.log",
+      "*/src/detection.log"
     ],
     "quarantineDir": "./quarantine",
-    "logFile": "./detection.log",
+    "logFile": "./logs/detection.log",
     "rulesDir": "./rules"
   },
   "extensions": {

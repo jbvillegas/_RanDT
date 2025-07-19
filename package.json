@@ -2,17 +2,17 @@
   "name": "randt-threat-detector",
   "version": "1.0.0",
   "description": "Real-time threat detection system using YARA rules for comprehensive security monitoring",
-  "main": "detector.js",
+  "main": "src/detector.js",
   "scripts": {
-    "start": "node detector.js",
+    "start": "node src/detector.js",
     "test": "node test/test-rules.js",
     "test-rules": "./scripts/test-rules.sh",
     "validate-rules": "yara --version && find rules/ -name '*.yar' -exec yara {} /dev/null \\;",
     "install-deps": "npm install && brew list yara || brew install yara",
     "setup": "npm run install-deps && npm run validate-rules",
-    "daemon": "nohup node detector.js > randt.log 2>&1 &",
-    "stop": "pkill -f 'node detector.js'",
-    "status": "pgrep -f 'node detector.js' && echo 'RanDT is running' || echo 'RanDT is not running'",
+    "daemon": "nohup node src/detector.js > randt.log 2>&1 &",
+    "stop": "pkill -f 'node src/detector.js'",
+    "status": "pgrep -f 'node src/detector.js' && echo 'RanDT is running' || echo 'RanDT is not running'",
     "logs": "tail -f detection.log",
     "clean": "rm -f detection.log randt.log && rm -rf quarantine/",
     "update-rules": "git pull origin master && npm run validate-rules"
@@ -28,7 +28,7 @@
     "file-monitoring"
   ],
   "author": "Joaquin Villegas <your.email@example.com>",
-  "license": "MIT",
+  "license": "RanDT",
   "repository": {
     "type": "git",
     "url": "https://github.com/jbvillegas/_RanDT.git"
