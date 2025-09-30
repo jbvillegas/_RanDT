@@ -1,4 +1,4 @@
-# RanDT - Ransomware Detection System
+# RanDT - Ransomware Detection Tool
 
 A comprehensive, ransomware detection system using YARA rules for monitoring and analyzing files on macOS systems. RanDT provides enterprise-grade security monitoring for Documents, Desktop, and Downloads folders.
 
