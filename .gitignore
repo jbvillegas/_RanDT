@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Runtime logs and artifacts
+logs/
+*.log
+
+# Test artifacts
+test/samples/
+test/test-results.log
+
+# OS files
+.DS_Store
