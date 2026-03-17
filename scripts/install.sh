@@ -87,7 +87,7 @@ log_success "Node.js dependencies installed"
 log_info "Validating YARA rules..."
 RULES_VALID=true
 
-for rule_file in rules/*.yar; do
+for rule_file in src/rules/*.yar; do
     if [ -f "$rule_file" ]; then
         log_info "Validating $rule_file..."
         if yara "$rule_file" /dev/null &> /dev/null; then

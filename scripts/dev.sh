@@ -95,7 +95,7 @@ cmd_lint() {
     npx eslint . --ext .js || print_warning "ESLint issues found"
     
     echo "Checking YARA rules syntax..."
-    for rule_file in rules/*.yar; do
+    for rule_file in src/rules/*.yar; do
         echo "Checking $rule_file..."
         yara -w "$rule_file" /dev/null 2>/dev/null || print_warning "Issues in $rule_file"
     done
@@ -167,7 +167,7 @@ cmd_benchmark() {
     
     ## TIME SCANNING
     echo "Benchmarking scan performance..."
-    time yara rules/master.yar temp_test/*
+    time yara src/rules/master.yar temp_test/*
     
     ## CLEAN UP
     rm -rf temp_test
@@ -190,7 +190,7 @@ cmd_docs() {
     echo "# YARA Rules Documentation" > RULES.md
     echo "" >> RULES.md
     
-    for rule_file in rules/*.yar; do
+    for rule_file in src/rules/*.yar; do
         echo "## $(basename "$rule_file")" >> RULES.md
         echo "" >> RULES.md
         echo "\`\`\`yara" >> RULES.md

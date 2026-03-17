@@ -68,6 +68,6 @@ rule attachment_size: mail {
 
     condition:
         $attachment and
-        filesize > 50MB or 
-        (filesize < 1KB and filesize > 0) // Adjusted to detect attachments smaller than 1KB
+        $filename and
+        (filesize > 50MB or (filesize < 1KB and filesize > 0)) // Detect unusually large/small attachments
 }

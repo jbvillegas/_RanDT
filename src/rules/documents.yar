@@ -195,8 +195,8 @@ rule suspicious_zip_archive {
         $suspicious_name5 = "order" nocase
         
     condition:
-        $zip_header at 0 and 
-        (any of ($*in_zip) or any of ($double_ext*)) and
+        ($zip_header at 0 or $zip_central) and 
+        (any of ($exe_in_zip, $scr_in_zip, $bat_in_zip, $cmd_in_zip, $vbs_in_zip, $js_in_zip, $jar_in_zip, $com_in_zip, $pif_in_zip) or any of ($double_ext*)) and
         (any of ($password*) or any of ($suspicious_name*))
 }
 
@@ -370,7 +370,7 @@ rule document_with_embedded_executable {
         $stream3 = "/Type/EmbeddedFile" nocase
         
     condition:
-        (any of ($*header) at 0) and 
+        (($pdf_header at 0) or ($ole_header at 0) or ($rtf_header at 0)) and
         (any of ($pe_header, $elf_header, $macho_header)) and
         (any of ($embed*) or any of ($stream*))
 }

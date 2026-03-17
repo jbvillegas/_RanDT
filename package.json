@@ -5,9 +5,9 @@
   "main": "src/detector.js",
   "scripts": {
     "start": "node src/detector.js",
-    "test": "node test/test-rules.js",
-    "test-rules": "./scripts/test-rules.sh",
-    "validate-rules": "yara --version && find rules/ -name '*.yar' -exec yara {} /dev/null \\;",
+    "test": "bash ./scripts/test-rules.sh",
+    "test-rules": "bash ./scripts/test-rules.sh",
+    "validate-rules": "yara --version && find src/rules/ -name '*.yar' -exec yara {} /dev/null \\;",
     "install-deps": "npm install && brew list yara || brew install yara",
     "setup": "npm run install-deps && npm run validate-rules",
     "daemon": "nohup node src/detector.js > randt.log 2>&1 &",

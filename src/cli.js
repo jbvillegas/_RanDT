@@ -87,7 +87,7 @@ function checkStatus() {
 function validateRules() {
     console.log(chalk.blue('Validating YARA rules...'));
     
-    const rulesDir = './rules';
+    const rulesDir = './src/rules';
     const ruleFiles = fs.readdirSync(rulesDir).filter(file => file.endsWith('.yar'));
     
     let valid = 0;
@@ -115,7 +115,7 @@ function validateRules() {
 function testRules() {
     console.log(chalk.blue('Running rule tests...'));
     
-    const testScript = './test-rules.sh';
+    const testScript = './scripts/test-rules.sh';
     if (!fs.existsSync(testScript)) {
         console.log(chalk.red('Test script not found'));
         return;

@@ -7,7 +7,7 @@ const os = require('os');
 // Configuration
 const CONFIG = {
     RULES_DIR: path.join(__dirname, 'rules'),
-    MASTER_RULES: path.join(__dirname, '..', 'rules', 'master.yar'),
+    MASTER_RULES: path.join(__dirname, 'rules', 'master.yar'),
     MAX_FILE_SIZE: 100 * 1024 * 1024, // 100MB
     QUARANTINE_DIR: path.join(__dirname, '..', 'quarantine'),
     LOG_FILE: path.join(__dirname, '..', 'logs', 'detection.log'),

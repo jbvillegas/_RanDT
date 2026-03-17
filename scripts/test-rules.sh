@@ -219,8 +219,8 @@ run_yara_tests() {
             
             log_info "Testing $filename..."
             
-            if yara -r rules/master.yar "$test_file" > /dev/null 2>&1; then
-                local matches=$(yara -r rules/master.yar "$test_file" 2>/dev/null | wc -l)
+            if yara -r src/rules/master.yar "$test_file" > /dev/null 2>&1; then
+                local matches=$(yara -r src/rules/master.yar "$test_file" 2>/dev/null | wc -l)
                 if [ "$matches" -gt 0 ]; then
                     log_success "✓ $filename - $matches rule(s) matched"
                     echo "PASS: $filename - $matches rule(s) matched" >> "$RESULTS_FILE"
@@ -293,7 +293,7 @@ if ! command -v yara &> /dev/null; then
 fi
 
 # Check if rules exist
-if [ ! -f "rules/master.yar" ]; then
+if [ ! -f "src/rules/master.yar" ]; then
     log_error "master.yar not found. Please ensure YARA rules are present."
     exit 1
 fi
